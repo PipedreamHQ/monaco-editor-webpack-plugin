@@ -130,7 +130,8 @@ function createLoaderRules(languages, features, workers, outputPath, publicPath)
         {
           loader: INCLUDE_LOADER_PATH,
           options: {
-            globals,
+            // tjk: this overrides my MonacoEnvironment... (handle cross-domain)
+            // globals,
             pre: featurePaths.map((importPath) => resolveMonacoPath(importPath)),
             post: languagePaths.map((importPath) => resolveMonacoPath(importPath)),
           },
